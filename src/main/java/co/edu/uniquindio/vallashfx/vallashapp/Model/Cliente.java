@@ -1,13 +1,20 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Model;
 
+import java.util.ArrayList;
+
 public class Cliente extends Persona {
 
-    public Cliente(String id,
-                   String cedula,
-                   String nombre,
-                   String apellido,
-                   String telefono,
-                   int edad) {
-        super(id, cedula, nombre, apellido, telefono, edad);
+    ArrayList<Cita>listaCitasCliente = new ArrayList<>();
+
+    public Cliente() {
+
+    }
+
+    public ArrayList<Cita> getListaCitasCliente() {
+        return listaCitasCliente;
+    }
+
+    public void setListaCitasCliente(ArrayList<Cita> listaCitasCliente) {
+        this.listaCitasCliente = listaCitasCliente;
     }
 }

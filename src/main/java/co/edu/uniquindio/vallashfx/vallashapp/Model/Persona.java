@@ -9,13 +9,8 @@ public class Persona {
     private String telefono;
     private int edad;
 
-    public Persona(String id, String cedula, String nombre, String apellido, String telefono, int edad) {
-        this.id = id;
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.edad = edad;
+    public Persona() {
+
     }
 
     public String getId() {

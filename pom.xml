@@ -71,7 +71,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.vallashfx.vallashapp/co.edu.uniquindio.vallashfx.vallashapp.HelloApplication
+                                co.edu.uniquindio.vallashfx.vallashapp/co.edu.uniquindio.vallashfx.vallashapp.VallashApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
