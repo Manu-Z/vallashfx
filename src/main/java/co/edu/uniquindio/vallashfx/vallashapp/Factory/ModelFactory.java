@@ -6,7 +6,7 @@ public class ModelFactory {
     public static ModelFactory modelFactory;
 
     public ModelFactory() {
-        // metodo construtor
+
     }
 
 

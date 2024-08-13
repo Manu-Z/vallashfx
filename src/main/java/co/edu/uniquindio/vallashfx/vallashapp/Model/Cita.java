@@ -39,4 +39,24 @@ public class Cita {
     public Tratamiento getTratamientoAsociado() {
         return tratamientoAsociado;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
+    public void setClienteAsociado(Cliente clienteAsociado) {
+        this.clienteAsociado = clienteAsociado;
+    }
+
+    public void setTratamientoAsociado(Tratamiento tratamientoAsociado) {
+        this.tratamientoAsociado = tratamientoAsociado;
+    }
 }

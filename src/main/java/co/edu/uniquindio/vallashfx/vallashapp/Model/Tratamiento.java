@@ -3,30 +3,46 @@ package co.edu.uniquindio.vallashfx.vallashapp.Model;
 public class Tratamiento {
 
     private String nombre;
-    private String descripción;
+    private String descripcion;
     private String precio;
-    private String duración;
+    private String duracion;
 
-    public Tratamiento(String nombre, String descripción, String precio, String duración) {
+    public Tratamiento(String nombre, String descripcion, String precio, String duracion) {
         this.nombre = nombre;
-        this.descripción = descripción;
+        this.descripcion = descripcion;
         this.precio = precio;
-        this.duración = duración;
+        this.duracion = duracion;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public String getPrecio() {
         return precio;
     }
 
-    public String getDuración() {
-        return duración;
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
     }
 }

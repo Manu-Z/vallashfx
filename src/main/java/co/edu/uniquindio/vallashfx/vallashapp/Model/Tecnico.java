@@ -15,5 +15,9 @@ public class Tecnico extends Persona{
     public String getHorarioTrabajo() {
         return horarioTrabajo;
     }
+
+    public void setHorarioTrabajo(String horarioTrabajo) {
+        this.horarioTrabajo = horarioTrabajo;
+    }
 }
 
