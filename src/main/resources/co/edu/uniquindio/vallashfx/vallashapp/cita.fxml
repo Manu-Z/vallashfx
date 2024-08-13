@@ -23,43 +23,43 @@
                         <Label layoutX="5.0" layoutY="2.0" text="Información del Cliente" />
                         <Separator layoutY="19.0" prefHeight="0.0" prefWidth="750.0" />
                         <Label layoutX="25.0" layoutY="39.0" text="Cedula Cliente:  " />
-                        <TextField layoutX="119.0" layoutY="35.0" />
+                        <TextField fx:id="txtCedulaCliente" layoutX="119.0" layoutY="35.0" />
                         <Separator layoutY="84.0" prefHeight="2.0" prefWidth="750.0" />
                         <Label layoutX="23.0" layoutY="124.0" text="Cedula Técnico:  " />
-                        <TextField layoutX="116.0" layoutY="120.0" />
+                        <TextField fx:id="txtCedulaTecnico" layoutX="116.0" layoutY="120.0" />
                         <Separator layoutX="-1.0" layoutY="161.0" prefHeight="0.0" prefWidth="750.0" />
                         <Label layoutX="278.0" layoutY="40.0" text="Nombre Cliente:  " />
-                        <TextField layoutX="376.0" layoutY="36.0" />
+                        <TextField fx:id="txtNombreCliente" layoutX="376.0" layoutY="36.0" />
                         <Label layoutX="276.0" layoutY="124.0" text="Nombre Técnico:  " />
-                        <TextField layoutX="374.0" layoutY="120.0" />
+                        <TextField fx:id="txtNombreTecnico" layoutX="374.0" layoutY="120.0" />
                         <Label layoutX="5.0" layoutY="85.0" text="Información del Técnico" />
-                        <TableView layoutX="-1.0" layoutY="279.0" prefHeight="200.0" prefWidth="750.0">
+                        <TableView fx:id="tablaCita" layoutX="-1.0" layoutY="279.0" prefHeight="200.0" prefWidth="750.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="id" />
-                            <TableColumn prefWidth="107.0" text="Nombre Cliente" />
-                              <TableColumn prefWidth="107.0" text="Cedula Cliente" />
-                              <TableColumn prefWidth="81.0" text="Técnico" />
-                              <TableColumn prefWidth="98.0" text="Cedula Técnico" />
-                              <TableColumn prefWidth="104.0" text="Tratamiento" />
-                              <TableColumn prefWidth="75.0" text="Fecha " />
-                              <TableColumn prefWidth="75.0" text="Hora" />
+                            <TableColumn fx:id="tpId" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="tpNombreCliente" prefWidth="107.0" text="Nombre Cliente" />
+                              <TableColumn fx:id="tpCedulaCliente" prefWidth="107.0" text="Cedula Cliente" />
+                              <TableColumn fx:id="tpTecnico" prefWidth="81.0" text="Técnico" />
+                              <TableColumn fx:id="tpCedulaTecnico" prefWidth="98.0" text="Cedula Técnico" />
+                              <TableColumn fx:id="tpTratamiento" prefWidth="104.0" text="Tratamiento" />
+                              <TableColumn fx:id="tpFecha" prefWidth="75.0" text="Fecha " />
+                              <TableColumn fx:id="tpHora" prefWidth="75.0" text="Hora" />
                           </columns>
                         </TableView>
                         <Label layoutX="3.0" layoutY="164.0" text="Información de la cita: " />
                         <Label layoutX="18.0" layoutY="188.0" text="Id:  " />
-                        <TextField layoutX="45.0" layoutY="184.0" prefHeight="25.0" prefWidth="85.0" />
+                        <TextField fx:id="txtIdCita" layoutX="45.0" layoutY="184.0" prefHeight="25.0" prefWidth="85.0" />
                         <Label layoutX="158.0" layoutY="188.0" text="Fecha:" />
-                        <TextField layoutX="204.0" layoutY="184.0" prefHeight="25.0" prefWidth="105.0" />
+                        <TextField fx:id="txtFechaCita" layoutX="204.0" layoutY="184.0" prefHeight="25.0" prefWidth="105.0" />
                         <Separator layoutX="9.0" layoutY="227.0" prefHeight="0.0" prefWidth="750.0" />
                         <Label layoutX="325.0" layoutY="188.0" text="Hora: " />
-                        <TextField layoutX="364.0" layoutY="184.0" prefHeight="25.0" prefWidth="105.0" />
-                        <ChoiceBox layoutX="578.0" layoutY="184.0" prefWidth="150.0" />
-                        <Button layoutX="590.0" layoutY="36.0" mnemonicParsing="false" text="Buscar" />
-                        <Button layoutX="590.0" layoutY="112.0" mnemonicParsing="false" text="Buscar" />
+                        <TextField fx:id="txtHoraCita" layoutX="364.0" layoutY="184.0" prefHeight="25.0" prefWidth="105.0" />
+                        <ChoiceBox fx:id="choiTratamiento" layoutX="578.0" layoutY="184.0" prefWidth="150.0" />
+                        <Button fx:id="btnBuscarCliente" layoutX="590.0" layoutY="36.0" mnemonicParsing="false" text="Buscar" />
+                        <Button fx:id="btnBuscarTecnico" layoutX="590.0" layoutY="112.0" mnemonicParsing="false" text="Buscar" />
                         <Label layoutX="505.0" layoutY="188.0" text="Tratamiento:" />
-                        <Button layoutX="100.0" layoutY="240.0" mnemonicParsing="false" text="Eliminar" />
-                        <Button layoutX="548.0" layoutY="240.0" mnemonicParsing="false" text="Actualizar" />
-                        <Button layoutX="312.0" layoutY="240.0" mnemonicParsing="false" text="Agregar" />
+                        <Button fx:id="btnEliminarCita" layoutX="100.0" layoutY="240.0" mnemonicParsing="false" text="Eliminar" />
+                        <Button fx:id="btnActualizarCita" layoutX="548.0" layoutY="240.0" mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="btnAgregarCita" layoutX="312.0" layoutY="240.0" mnemonicParsing="false" text="Agregar" />
                      </children>
                   </AnchorPane>
             </content>
