@@ -1,10 +1,12 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Factory;
 
+
 public class ModelFactory {
 
     public static ModelFactory modelFactory;
 
     public ModelFactory() {
+        // metodo construtor
     }
 
 
