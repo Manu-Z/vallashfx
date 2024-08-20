@@ -62,33 +62,40 @@ public class VallashUtils {
         salonVallash.getListaTecnicos().add(tecnico3);
 
         Tratamiento tratamiento = new Tratamiento();
-        tratamiento.setNombre("Extensión de Pestañas");
-        tratamiento.setDescripcion("1");
-        tratamiento.setPrecio(100000);
-        tratamiento.setDuracion("2 horas");
+        tratamiento.setNombre("Efecto natural");
+        tratamiento.setDescripcion("Extensiones de pestañas diseñadas para ofrecer un aspecto delicado y auténtico");
+        tratamiento.setPrecio(60000);
+        tratamiento.setIdTratamiento("EF01");
         salonVallash.getListaTratamientos().add(tratamiento);
 
         Tratamiento tratamiento2 = new Tratamiento();
-        tratamiento2.setNombre("producto 2 ");
-        tratamiento2.setDescripcion("2");
-        tratamiento2.setPrecio(200000);
-        tratamiento2.setDuracion("1 hora");
+        tratamiento2.setNombre("Efecto Pestañina");
+        tratamiento2.setDescripcion("Extensiones que logran aumentar tu volumen, grosor y curvatura, de la forma más sutil posible");
+        tratamiento2.setPrecio(60000);
+        tratamiento2.setIdTratamiento("EP02");
         salonVallash.getListaTratamientos().add(tratamiento2);
 
         Tratamiento tratamiento3 = new Tratamiento();
-        tratamiento3.setNombre("producto 3 ");
-        tratamiento3.setDescripcion("2");
-        tratamiento3.setPrecio(100000);
-        tratamiento3.setDuracion(" 1 hora");
+        tratamiento3.setNombre("Volumen hawaiano");
+        tratamiento3.setDescripcion("Presentan longitudes y volúmenes atrevidos");
+        tratamiento3.setPrecio(80000);
+        tratamiento3.setIdTratamiento("VH03");
+        salonVallash.getListaTratamientos().add(tratamiento3);
+
+        Tratamiento tratamiento4 = new Tratamiento();
+        tratamiento3.setNombre("Lifting");
+        tratamiento3.setDescripcion("Eleva la curvatura de tus pestañas sin utilizar pelo sintético");
+        tratamiento3.setPrecio(55000);
+        tratamiento3.setIdTratamiento("LF04");
         salonVallash.getListaTratamientos().add(tratamiento3);
 
         Cita cita = new Cita();
         cita.setId("1");
         cita.setFecha("13-8-2024");
-        cita.setHora("8:00");
-        cita.setClienteAsociado(cliente);
-        cita.setTratamientoAsociado(tratamiento);
-        cita.setTecnicoAsociado(tecnico);
+        cita.setHora("8:00 am");
+        cita.setClienteAsociado(salonVallash.getListaClientes().get(0));
+        cita.setTratamientoAsociado(salonVallash.getListaTratamientos().get(0));
+        cita.setTecnicoAsociado(salonVallash.getListaTecnicos().get(0));
         salonVallash.getListaCitas().add(cita);
 
         return salonVallash;

@@ -9,6 +9,7 @@ import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.Citadto;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -37,43 +38,37 @@ public class citaViewController {
     private Button btnAgregarCita;
 
     @FXML
-    private Button btnBuscarCliente;
-
-    @FXML
-    private Button btnBuscarTecnico;
-
-    @FXML
     private Button btnEliminarCita;
-
-    @FXML
-    private ChoiceBox<?> choiTratamiento;
 
     @FXML
     private TableView<Citadto> tablaCita;
 
     @FXML
-    private TableColumn<Citadto, String> tpCedulaCliente;
+    private TableColumn<Citadto, String> tcCedulaCliente;
 
     @FXML
-    private TableColumn<Citadto, String> tpCedulaTecnico;
+    private TableColumn<Citadto, String> tcCedulaTecnico;
 
     @FXML
-    private TableColumn<Citadto, String> tpFecha;
+    private TableColumn<Citadto, String> tcCodigoTratamiento;
 
     @FXML
-    private TableColumn<Citadto, String> tpHora;
+    private TableColumn<Citadto, String> tcFecha;
 
     @FXML
-    private TableColumn<Citadto, String> tpId;
+    private TableColumn<Citadto, String> tcHora;
 
     @FXML
-    private TableColumn<Citadto, String> tpNombreCliente;
+    private TableColumn<Citadto, String> tcIdCita;
 
     @FXML
-    private TableColumn<Citadto, String> tpTecnico;
+    private TableColumn<Citadto, String> tcNombreCliente;
 
     @FXML
-    private TableColumn<Citadto, String> tpTratamiento;
+    private TableColumn<Citadto, String> tcTecnico;
+
+    @FXML
+    private TableColumn<Citadto, String> tcTratamiento;
 
     @FXML
     private TextField txtCedulaCliente;
@@ -89,16 +84,55 @@ public class citaViewController {
 
     @FXML
     private TextField txtIdCita;
+    @FXML
+    private TextField txtIdTratamiento;
 
     @FXML
     private TextField txtNombreCliente;
 
     @FXML
     private TextField txtNombreTecnico;
+    @FXML
+    private TextField txtNombreTratamiento;
+    @FXML
+    void onActualizarCita(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onCrearCita(ActionEvent event) {
+        crearCita();
+
+    }
+
+    private void crearCita() {
+        citadto = buildCitaDto();
+        citaControllerService.crearCita(citadto);
+    }
+
+    private Citadto buildCitaDto() {
+        return new Citadto(
+                txtNombreCliente.getText(),
+                txtCedulaCliente.getText(),
+                txtNombreTecnico.getText(),
+                txtCedulaTecnico.getText(),
+                txtNombreTratamiento.getText(),
+                txtIdTratamiento.getText(),
+                txtIdCita.getText(),
+                txtFechaCita.getText(),
+                txtHoraCita.getText()
+
+        );
+    }
+
+    @FXML
+    void onEliminarCita(ActionEvent event) {
+
+    }
+
 
     @FXML
     void initialize() {
-
         citaControllerService = new CitaController();
         initView();
     }
@@ -120,10 +154,12 @@ public class citaViewController {
 
     private void mostrarInformacionCita(Citadto citadto){
         if (this.citadto != null){
-            txtCedulaCliente.setText(citadto.clientedto().cedulaCliente());
-            txtNombreCliente.setText(citadto.clientedto().nombreCliente());
-            txtCedulaTecnico.setText(citadto.tecnicodto().cedulaTecnico());
-            txtNombreTecnico.setText(citadto.tecnicodto().nombreTecnico());
+            txtCedulaCliente.setText(citadto.cedulaCliente());
+            txtNombreCliente.setText(citadto.nombreCliente());
+            txtCedulaTecnico.setText(citadto.cedulaTecnico());
+            txtNombreTecnico.setText(citadto.nombreTecnico());
+            txtNombreTratamiento.setText(citadto.tratamiento());
+            txtIdTratamiento.setText(citadto.idtratamiento());
             txtIdCita.setText(citadto.id());
             txtFechaCita.setText(citadto.fecha());
             txtHoraCita.setText(citadto.fecha());
@@ -136,13 +172,15 @@ public class citaViewController {
     }
 
     private void initDataBinding() {
-        tpCedulaCliente.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().clientedto().cedulaCliente())));
-        tpNombreCliente.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().clientedto().nombreCliente())));
-        tpCedulaTecnico.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().tecnicodto().cedulaTecnico())));
-        tpTecnico.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().tecnicodto().nombreTecnico())));
-        tpTratamiento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().id()));
-        tpFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().fecha()));
-        tpHora.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().hora()));
+        tcCedulaCliente.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().cedulaCliente())));
+        tcNombreCliente.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().nombreCliente())));
+        tcCedulaTecnico.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().cedulaTecnico())));
+        tcTecnico.setCellValueFactory((cellData -> new SimpleStringProperty(cellData.getValue().nombreTecnico())));
+        tcTratamiento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().tratamiento()));
+        tcCodigoTratamiento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().idtratamiento()));
+        tcIdCita.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().id()));
+        tcFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().fecha()));
+        tcHora.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().hora()));
     }
 
 }

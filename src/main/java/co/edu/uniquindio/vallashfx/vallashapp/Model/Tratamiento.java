@@ -4,17 +4,17 @@ public class Tratamiento {
 
     private String nombre;
     private String descripcion;
+    private String idTratamiento;
     private double precio;
-    private String duracion;
 
     public Tratamiento() {
     }
 
-    public Tratamiento(String nombre, String descripcion, double precio, String duracion) {
+    public Tratamiento(String nombre, String descripcion, String idTratamiento, double precio, String duracion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.idTratamiento = idTratamiento;
         this.precio = precio;
-        this.duracion = duracion;
     }
 
     public String getNombre() {
@@ -29,10 +29,6 @@ public class Tratamiento {
         return precio;
     }
 
-    public String getDuracion() {
-        return duracion;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -45,7 +41,11 @@ public class Tratamiento {
         this.precio = precio;
     }
 
-    public void setDuracion(String duracion) {
-        this.duracion = duracion;
+    public String getIdTratamiento() {
+        return idTratamiento;
+    }
+
+    public void setIdTratamiento(String idTratamiento) {
+        this.idTratamiento = idTratamiento;
     }
 }
