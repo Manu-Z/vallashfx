@@ -1,6 +1,7 @@
 module co.edu.uniquindio.vallashfx.vallashapp {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.mapstruct;
 
 
     opens co.edu.uniquindio.vallashfx.vallashapp to javafx.fxml;

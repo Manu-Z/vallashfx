@@ -1,7 +1,7 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Controller;
 
 import co.edu.uniquindio.vallashfx.vallashapp.Factory.ModelFactory;
-import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.Citadto;
+import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.CitaDto;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ public class CitaController {
     public CitaController(){
         modelFactory = ModelFactory.getInstance();
     }
-    public List<Citadto> obtenerCitas() {
-        return modelFactory.obtenerCitas();
+    public List<CitaDto> obtenerCitas() {
+        return modelFactory.obtenerCitass();
     }
 
-    public boolean crearCita(Citadto citadto) {
+    public boolean crearCita(CitaDto citadto) {
         return modelFactory.crearCita(citadto);
     }
 }

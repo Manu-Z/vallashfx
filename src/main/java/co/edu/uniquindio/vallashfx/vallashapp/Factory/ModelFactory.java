@@ -1,43 +1,62 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Factory;
 
 
-import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.Citadto;
+import co.edu.uniquindio.vallashfx.vallashapp.Factory.Servicios.IModelFactoryService;
+import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.CitaDto;
+import co.edu.uniquindio.vallashfx.vallashapp.Mapping.mappers.VallashMapper;
 import co.edu.uniquindio.vallashfx.vallashapp.Model.Cita;
 import co.edu.uniquindio.vallashfx.vallashapp.Model.SalonVallash;
+import co.edu.uniquindio.vallashfx.vallashapp.Utils.VallashUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelFactory {
+public class ModelFactory implements IModelFactoryService {
 
-    public static ModelFactory modelFactory;
     SalonVallash salonVallash;
 
+    VallashMapper mapper = VallashMapper.INSTANCE;
+
+//    public static ModelFactory modelFactory;
+
+
+    private static class SingletonHolder {
+        private final static ModelFactory eINSTANCE = new ModelFactory();
+    }
+
+    // Método para obtener la instancia de nuestra clase
+    public static ModelFactory getInstance() {
+        return SingletonHolder.eINSTANCE;
+    }
+
     public ModelFactory() {
-
+        System.out.println("invocación clase singleton");
+        cargarDatosBase();
     }
 
-
-    public static ModelFactory getInstance(){
-        if (modelFactory == null){
-            modelFactory = new ModelFactory();
-
-        }return modelFactory;
+    private void cargarDatosBase() {
+        salonVallash = VallashUtils.inicializarDatos();
     }
 
-    public List<Citadto> obtenerCitas() {
-        List<Cita> citaList = salonVallash.getListaCitas();
-        List<Citadto> citaDtoList = new ArrayList<>();
+   @Override
+   public List<CitaDto> obtenerCitass(){
+        return mapper.getCitadto(salonVallash.getListaCitas());
+   }
 
-        for (Cita cita: citaList) {
-            citaDtoList.add(buildCitaDto(cita));
 
-        }
-        return citaDtoList;
-    }
+    /// public List<CitaDto> obtenerCitas() {
+     //  List<Cita> citaList = salonVallash.getListaCitas();
+      // List<CitaDto> citaDtoList = new ArrayList<>();
 
-    private Citadto buildCitaDto(Cita cita) {
-        return new Citadto(
+      // for (Cita cita: citaList) {
+       //  citaDtoList.add(buildCitaDto(cita));
+
+     // }
+      // return citaDtoList;
+    //}
+
+    private CitaDto buildCitaDto(Cita cita) {
+        return new CitaDto(
                 cita.getClienteAsociado().getNombre(),
                 cita.getClienteAsociado().getCedula(),
                 cita.getTecnicoAsociado().getNombre(),
@@ -51,7 +70,7 @@ public class ModelFactory {
         );
     }
 
-    public boolean crearCita(Citadto citadto) {
+    public boolean crearCita(CitaDto citadto) {
         Cita cita = buildCita(citadto);
         // return salonVallash.crearCita(citadto);
 
@@ -59,7 +78,7 @@ public class ModelFactory {
 
     }
 
-    private Cita buildCita(Citadto citadto) {
+    private Cita buildCita(CitaDto citadto) {
         return null;
     }
 }

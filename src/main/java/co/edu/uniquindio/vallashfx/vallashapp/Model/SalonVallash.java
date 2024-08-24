@@ -1,7 +1,5 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Model;
 
-import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.Citadto;
-
 import java.util.ArrayList;
 
 public class SalonVallash {

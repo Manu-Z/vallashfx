@@ -1,6 +1,6 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto;
 
-public record Citadto(
+public record CitaDto(
         String nombreCliente,
         String cedulaCliente,
         String nombreTecnico,
