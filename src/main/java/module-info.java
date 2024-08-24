@@ -10,6 +10,7 @@ module co.edu.uniquindio.vallashfx.vallashapp {
     exports co.edu.uniquindio.vallashfx.vallashapp.ViewController;
     exports co.edu.uniquindio.vallashfx.vallashapp.Controller;
     exports co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto;
+    exports co.edu.uniquindio.vallashfx.vallashapp.Mapping.mappers;
     exports co.edu.uniquindio.vallashfx.vallashapp.Model;
     opens co.edu.uniquindio.vallashfx.vallashapp.Controller to javafx.fxml;
 

@@ -130,7 +130,7 @@ public class citaViewController {
     }
 
     private void obtenerCitas() {
-        listacitasDto.addAll(citaControllerService.obtenerCitas());
+        listacitasDto.addAll(citaControllerService.obtenerCita());
     }
 
     private void initDataBinding() {

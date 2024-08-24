@@ -1,6 +1,7 @@
 package co.edu.uniquindio.vallashfx.vallashapp.Factory;
 
 
+import co.edu.uniquindio.vallashfx.vallashapp.Exceptions.CitaException;
 import co.edu.uniquindio.vallashfx.vallashapp.Factory.Servicios.IModelFactoryService;
 import co.edu.uniquindio.vallashfx.vallashapp.Mapping.dto.CitaDto;
 import co.edu.uniquindio.vallashfx.vallashapp.Mapping.mappers.VallashMapper;
@@ -19,12 +20,12 @@ public class ModelFactory implements IModelFactoryService {
 
 
     private static class SingletonHolder {
-        private final static ModelFactory INSTANCE = new ModelFactory();
+        private final static ModelFactory eINSTANCE = new ModelFactory();
     }
 
     // Método para obtener la instancia de nuestra clase
     public static ModelFactory getInstance() {
-        return SingletonHolder.INSTANCE;
+        return SingletonHolder.eINSTANCE;
     }
 
     public ModelFactory() {
@@ -33,7 +34,16 @@ public class ModelFactory implements IModelFactoryService {
     }
 
     private void cargarDatosBase() {
+
         salonVallash = VallashUtils.inicializarDatos();
+    }
+
+    public SalonVallash getSalonVallash(){
+        return salonVallash;
+    }
+
+    public void setSalonVallash(SalonVallash salonVallash){
+        this.salonVallash = salonVallash;
     }
 
    @Override
@@ -68,15 +78,42 @@ public class ModelFactory implements IModelFactoryService {
         );
     }
 
+    @Override
     public boolean crearCita(CitaDto citadto) {
-        Cita cita = buildCita(citadto);
-        // return salonVallash.crearCita(citadto);
-
-        return true;
-
+        try{
+            if(!salonVallash.verificarCitaExistente(citadto.id())) {
+                Cita cita = mapper.citaDtoToCita(citadto);
+                getSalonVallash().crearCita(cita);
+            }
+            return true;
+        }catch (CitaException e){
+            e.getMessage();
+            return false;
+        }
     }
 
-    private Cita buildCita(CitaDto citadto) {
-        return null;
+
+    @Override
+    public boolean eliminarCita(String id) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getSalonVallash().eliminarCita(id);
+        } catch (CitaException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
+    @Override
+    public boolean actualizarCita(String idActual, CitaDto citaDto) {
+        try {
+            Cita cita = mapper.citaDtoToCita(citaDto);
+            getSalonVallash().actualizarCita(idActual, cita);
+            return true;
+        } catch (CitaException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
