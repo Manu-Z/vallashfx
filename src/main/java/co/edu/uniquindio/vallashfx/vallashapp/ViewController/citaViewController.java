@@ -122,7 +122,6 @@ public class citaViewController {
             txtCedulaTecnico.setText(citadto.cedulaTecnico());
             txtNombreTecnico.setText(citadto.nombreTecnico());
             txtNombreTratamiento.setText(citadto.tratamiento());
-            txtIdTratamiento.setText(citadto.idtratamiento());
             txtIdCita.setText(citadto.id());
             txtFechaCita.setText(citadto.fecha());
             txtHoraCita.setText(citadto.fecha());

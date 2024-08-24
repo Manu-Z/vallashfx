@@ -8,7 +8,6 @@ import co.edu.uniquindio.vallashfx.vallashapp.Model.Cita;
 import co.edu.uniquindio.vallashfx.vallashapp.Model.SalonVallash;
 import co.edu.uniquindio.vallashfx.vallashapp.Utils.VallashUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactory implements IModelFactoryService {
@@ -17,16 +16,15 @@ public class ModelFactory implements IModelFactoryService {
 
     VallashMapper mapper = VallashMapper.INSTANCE;
 
-//    public static ModelFactory modelFactory;
 
 
     private static class SingletonHolder {
-        private final static ModelFactory eINSTANCE = new ModelFactory();
+        private final static ModelFactory INSTANCE = new ModelFactory();
     }
 
     // Método para obtener la instancia de nuestra clase
     public static ModelFactory getInstance() {
-        return SingletonHolder.eINSTANCE;
+        return SingletonHolder.INSTANCE;
     }
 
     public ModelFactory() {
@@ -40,7 +38,7 @@ public class ModelFactory implements IModelFactoryService {
 
    @Override
    public List<CitaDto> obtenerCitass(){
-        return mapper.getCitadto(salonVallash.getListaCitas());
+        return mapper.getCitaDto(salonVallash.getListaCitas());
    }
 
 

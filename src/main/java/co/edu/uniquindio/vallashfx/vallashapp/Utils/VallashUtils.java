@@ -62,6 +62,7 @@ public class VallashUtils {
         salonVallash.getListaTecnicos().add(tecnico3);
 
         Tratamiento tratamiento = new Tratamiento();
+        tratamiento.setIdTratamiento("0B");
         tratamiento.setNombre("Efecto natural");
         tratamiento.setDescripcion("Extensiones de pestañas diseñadas para ofrecer un aspecto delicado y auténtico");
         tratamiento.setPrecio(60000);
@@ -69,6 +70,7 @@ public class VallashUtils {
         salonVallash.getListaTratamientos().add(tratamiento);
 
         Tratamiento tratamiento2 = new Tratamiento();
+        tratamiento2.setIdTratamiento("0C");
         tratamiento2.setNombre("Efecto Pestañina");
         tratamiento2.setDescripcion("Extensiones que logran aumentar tu volumen, grosor y curvatura, de la forma más sutil posible");
         tratamiento2.setPrecio(60000);
@@ -76,6 +78,7 @@ public class VallashUtils {
         salonVallash.getListaTratamientos().add(tratamiento2);
 
         Tratamiento tratamiento3 = new Tratamiento();
+        tratamiento3.setIdTratamiento("0D");
         tratamiento3.setNombre("Volumen hawaiano");
         tratamiento3.setDescripcion("Presentan longitudes y volúmenes atrevidos");
         tratamiento3.setPrecio(80000);
@@ -83,6 +86,7 @@ public class VallashUtils {
         salonVallash.getListaTratamientos().add(tratamiento3);
 
         Tratamiento tratamiento4 = new Tratamiento();
+        tratamiento4.setIdTratamiento("0E");
         tratamiento3.setNombre("Lifting");
         tratamiento3.setDescripcion("Eleva la curvatura de tus pestañas sin utilizar pelo sintético");
         tratamiento3.setPrecio(55000);
