@@ -16,14 +16,13 @@ public class ModelFactory implements IModelFactoryService {
 
     VallashMapper mapper = VallashMapper.INSTANCE;
 
-
-
     private static class SingletonHolder {
         private final static ModelFactory INSTANCE = new ModelFactory();
     }
 
     // Método para obtener la instancia de nuestra clase
     public static ModelFactory getInstance() {
+        System.out.println("getinstance");
         return SingletonHolder.INSTANCE;
     }
 

@@ -9,6 +9,7 @@ public class CitaController {
     ModelFactory modelFactory;
 
     public CitaController(){
+        System.out.println("Inicializando Model Fatory");
         modelFactory = ModelFactory.getInstance();
     }
     public List<CitaDto> obtenerCitas() {

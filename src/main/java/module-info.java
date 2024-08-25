@@ -13,4 +13,5 @@ module co.edu.uniquindio.vallashfx.vallashapp {
     exports co.edu.uniquindio.vallashfx.vallashapp.Model;
     opens co.edu.uniquindio.vallashfx.vallashapp.Controller to javafx.fxml;
 
+    exports co.edu.uniquindio.vallashfx.vallashapp.Mapping.mappers;
 }

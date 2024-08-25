@@ -7,7 +7,6 @@ import java.util.List;
 
 public class MainVallash {
     public static void main(String[] args) {
-
         ModelFactory modelFactory = ModelFactory.getInstance();
         CitaDto citaDto = new CitaDto(
                  "Juana",
@@ -21,7 +20,7 @@ public class MainVallash {
                      "8:00 pm");
 
 
-        List<CitaDto> citaDtoList = modelFactory.obtenerCitass();
-        citaDtoList.forEach(System.out::println);
+        //List<CitaDto> citaDtoList = modelFactory.obtenerCitass();
+        //citaDtoList.forEach(System.out::println);
     }
 }
